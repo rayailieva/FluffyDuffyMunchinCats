@@ -14,12 +14,14 @@
                 </div>
             </div>
             <hr class="hr-background" />
-            <h:form class="form" id="j_id_p">
+            <h:form class="form">
             <div class="row">
                 <div class="col-md-12  d-flex justify-content-center">
                     <div class="form-group">
                         <h:outputLabel for="name" value="Name"/>
-                        <h:inputText value="#{catCreateBean.catCreateBindingModel.name}" type="text" class="form-control" id="name"/>
+                        <h:inputText value="#{catCreateBean.catCreateBindingModel.name}" type="text" class="form-control" id="name">
+                        <f:validateLength minimum = "2" maximum = "10" />
+                        </h:inputText>
                     </div>
                 </div>
             </div>
@@ -27,7 +29,9 @@
                 <div class="col-md-12 d-flex justify-content-center">
                     <div class="form-group">
                         <h:outputLabel for="breed" value="Breed"/>
-                        <h:inputText value="#{catCreateBean.catCreateBindingModel.breed}" type="text" class="form-control" id="breed"/>
+                        <h:inputText value="#{catCreateBean.catCreateBindingModel.breed}" type="text" class="form-control" id="breed">
+                        <f:validateLength minimum = "5" maximum = "20" />
+                        </h:inputText>
                     </div>
                 </div>
             </div>
@@ -43,7 +47,9 @@
                 <div class="col-md-12 d-flex justify-content-center">
                     <div class="form-group">
                         <h:outputLabel for="age" value="Age"/>
-                        <h:inputText value="#{catCreateBean.catCreateBindingModel.age}" class="form-control" id="age"/>
+                        <h:inputText value="#{catCreateBean.catCreateBindingModel.age}" class="form-control" id="age">
+                        <f:validateLongRange minimum = "1" maximum = "31" />
+                        </h:inputText>
                     </div>
                 </div>
             </div>
@@ -59,7 +65,7 @@
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
                     <label class="mr-4">Gender</label>
-                    <h:selectOneRadio value="#{catCreateBean.catCreateBindingModel.breed}">
+                    <h:selectOneRadio value="#{catCreateBean.catCreateBindingModel.gender}">
                         <f:selectItem itemValue="Male" itemLabel="Male" />
                         <f:selectItem itemValue="Female" itemLabel="Female" />
                     </h:selectOneRadio>
@@ -73,24 +79,22 @@
                     </div>
                 </div>
             </div>
-            <hr class="hr-background" />
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <div class="form-group">
-                        <p:outputLabel for="button" value="Added On:" />
-                        <p:calendar id="button" value="#{catCreateBean.catCreateBindingModel.addedOn}" showOn="button" />
+                <hr class="hr-background" />
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="form-group">
+                            <p:outputLabel for="button" value="Added On:" />
+                            <p:calendar id="button" value="#{catCreateBean.catCreateBindingModel.addedOn}" showOn="button" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <hr class="hr-background" />
+                <hr class="hr-background" />
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
-                    <h:commandButton action="#{catCreateBean.addCat}" class="btn btn-success" value="Create Cat"/>
+                    <h:commandButton type="submit" class="btn btn-success"  value="Create Cat" action="#{catCreateBean.addCat}"/>
                 </div>
             </div>
-                <input type="hidden" name="j_id_p_SUBMIT" value="1" />
-                <input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:1" value="QUZFNzkwODE2RkY4RURCOTAwMDAwMDAx" autocomplete="off" />
-            </h:form>>
+            </h:form>
         </div>
     </ui:define>
 </ui:composition>

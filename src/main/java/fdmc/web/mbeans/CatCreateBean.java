@@ -22,12 +22,11 @@ public class CatCreateBean {
     private ModelMapper modelMapper;
 
     public CatCreateBean(){
-        this.catCreateBindingModel = new CatCreateBindingModel();
     }
 
     @Inject
     public CatCreateBean(CatService catService, ModelMapper modelMapper) {
-        this();
+        this.catCreateBindingModel = new CatCreateBindingModel();
         this.catService = catService;
         this.modelMapper = modelMapper;
     }
@@ -44,8 +43,7 @@ public class CatCreateBean {
         this.catService.saveCat(
                 this.modelMapper.map(this.catCreateBindingModel, CatServiceModel.class));
 
-        ExternalContext context = FacesContext.getCurrentInstance().getExternalContext();
-        context.redirect("/");
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/view/all-cats.xhtml");
 
     }
 }

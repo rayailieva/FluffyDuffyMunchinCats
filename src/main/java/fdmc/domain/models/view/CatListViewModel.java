@@ -1,13 +1,9 @@
-package fdmc.domain.entities;
+package fdmc.domain.models.view;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Date;
 
-@Entity(name = "cats")
-public class Cat extends BaseEntity{
+public class CatListViewModel {
 
     private String name;
     private String breed;
@@ -16,11 +12,10 @@ public class Cat extends BaseEntity{
     private String gender;
     private BigDecimal price;
     private Date addedOn;
-    private Boolean hasPassport;
 
-    public Cat(){}
+    public CatListViewModel() {
+    }
 
-    @Column(name = "name")
     public String getName() {
         return this.name;
     }
@@ -29,7 +24,6 @@ public class Cat extends BaseEntity{
         this.name = name;
     }
 
-    @Column(name = "breed")
     public String getBreed() {
         return this.breed;
     }
@@ -38,7 +32,6 @@ public class Cat extends BaseEntity{
         this.breed = breed;
     }
 
-    @Column(name = "color")
     public String getColor() {
         return this.color;
     }
@@ -47,7 +40,6 @@ public class Cat extends BaseEntity{
         this.color = color;
     }
 
-    @Column(name = "age")
     public Integer getAge() {
         return this.age;
     }
@@ -56,7 +48,6 @@ public class Cat extends BaseEntity{
         this.age = age;
     }
 
-    @Column(name = "gender")
     public String getGender() {
         return this.gender;
     }
@@ -65,7 +56,6 @@ public class Cat extends BaseEntity{
         this.gender = gender;
     }
 
-    @Column(name = "price")
     public BigDecimal getPrice() {
         return this.price;
     }
@@ -74,21 +64,11 @@ public class Cat extends BaseEntity{
         this.price = price;
     }
 
-    @Column(name = "added_on")
     public Date getAddedOn() {
         return this.addedOn;
     }
 
     public void setAddedOn(Date addedOn) {
         this.addedOn = addedOn;
-    }
-
-    @Column(name = "has_passport")
-    public Boolean getHasPassport() {
-        return this.hasPassport;
-    }
-
-    public void setHasPassport(Boolean hasPassport) {
-        this.hasPassport = hasPassport;
     }
 }

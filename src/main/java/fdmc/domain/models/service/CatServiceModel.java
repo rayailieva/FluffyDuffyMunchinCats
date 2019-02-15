@@ -2,6 +2,7 @@ package fdmc.domain.models.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class CatServiceModel {
 
@@ -12,7 +13,7 @@ public class CatServiceModel {
     private Integer age;
     private String gender;
     private BigDecimal price;
-    private LocalDate addedOn;
+    private Date addedOn;
     private Boolean hasPassport;
 
     public CatServiceModel(){}
@@ -73,11 +74,11 @@ public class CatServiceModel {
         this.price = price;
     }
 
-    public LocalDate getAddedOn() {
+    public Date getAddedOn() {
         return this.addedOn;
     }
 
-    public void setAddedOn(LocalDate addedOn) {
+    public void setAddedOn(Date addedOn) {
         this.addedOn = addedOn;
     }
 
